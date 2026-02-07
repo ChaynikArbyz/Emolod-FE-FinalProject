@@ -5,6 +5,7 @@ import Header from './components/Header/index.tsx';
 import Footer from './components/Footer/index.tsx';
 
 function App() {
+  
   return (
     <>
       <NotLoginedHeader />

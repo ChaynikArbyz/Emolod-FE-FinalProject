@@ -14,7 +14,7 @@ const NotLoginedHeader = () => {
                 <nav className="not-nav-menu">
                     <a href="/" className="not-nav-link">Home</a>
                     <a href="/about" className="not-nav-link">About us</a>
-                    <a href="/book" className="not-nav-link">Book</a>
+                    <a href="/books" className="not-nav-link">Books</a>
                     <a href="/contact" className="not-nav-link">Contact us</a>
                 </nav>
 

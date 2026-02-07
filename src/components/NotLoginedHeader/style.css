@@ -8,6 +8,7 @@
 
 .not-header-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     max-width: 1600px;
@@ -61,6 +62,7 @@
 
 .not-auth-buttons {
     display: flex;
+    flex-wrap: wrap;
     width: 18%;
     gap: 1rem;
     flex-shrink: 0;
@@ -83,6 +85,7 @@
 
 .not-btn-login {
     flex: 1;
+    max-width: 100px;
 }
 
 .not-btn-signup {
