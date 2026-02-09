@@ -1,0 +1,25 @@
+.ad-banner {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-top: 2px solid #0000001c;
+}
+
+.ad-banner-text {
+    color: #DB5408;
+    font-size: 48px;
+}
+
+.ad-banner-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    width: 487px;
+    color: black;
+    font-size: 28px;
+    border-radius: 1000px;
+    background-color: #ff7b00;
+}
