@@ -1,12 +1,11 @@
 import "./style.css"
-import "../../layouts/NotLoginedLayout";
-import NotLoginedLayout from "../../layouts/NotLoginedLayout";
+import Layout from "../../layouts/Layout"
 
 const Main = () => {
     return (
-        NotLoginedLayout(
+        <Layout>
             <div style={{backgroundColor: "#fff", height: "1000px"}}>  </div>
-        )
+        </Layout>
     )
 }
 

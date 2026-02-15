@@ -1,11 +1,13 @@
 import Header from "../../components/Header";
+import NotLoginedHeader from "../../components/NotLoginedHeader";
 import Footer from "../../components/Footer";
+import { checkToken } from "../../services/localStorageHelper";
 
-const Layout = (children: React.ReactNode) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <>
-        <Header />
+        {checkToken() ? <Header /> : <NotLoginedHeader />}
         {children}
         <Footer />
         </>

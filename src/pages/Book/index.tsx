@@ -1,12 +1,11 @@
 import "./style.css"
-import "../../layouts/NotLoginedLayout";
 import Layout from "../../layouts/Layout";
 
 const Book = () => {
     return (
-        Layout(
+        <Layout>
             <p> book </p>
-        )
+        </Layout>
     )
 }
 

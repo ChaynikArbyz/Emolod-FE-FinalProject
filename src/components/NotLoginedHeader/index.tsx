@@ -19,8 +19,8 @@ const NotLoginedHeader = () => {
                 </nav>
 
                 <div className="not-auth-buttons">
-                    <button className="not-btn-login">Sign in</button>
-                    <button className="not-btn-signup">Join us</button>
+                    <a href="/login" className="not-btn-login">Sign in</a>
+                    <a href="/register" className="not-btn-signup">Join us</a>
                 </div>
             </div>
         </header>

@@ -5,14 +5,14 @@ import type {User} from "../types/User.ts";
 
 export type BookWithAuthor = Book & { authorName: string | null };
 
-export function saveToLocalStorage(key: string, value: any): void {
+export function saveToLocalStorage<T>(key: string, value: T): void {
   try {
     localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
     console.error("Error saving to localStorage", error);
   }
 }
-function getFromLocalStorage<T>(key: string):T | null 
+export function getFromLocalStorage<T>(key: string):T | null 
 {
   try {
     const value = localStorage.getItem(key);
@@ -73,7 +73,10 @@ export function getBooksWithAuthor(): BookWithAuthor[] | null {
 }
 
 export function saveUser(user: User){
-    saveToLocalStorage('users', user);
+    const users = getFromLocalStorage<User[]>('users') || [];
+    users.push(user);
+
+    saveToLocalStorage<User[]>('users', users);
 }
 
 export function saveCurrentUserToken(token: string){
@@ -96,11 +99,7 @@ export function checkToken(): boolean {
     const savedToken = getFromLocalStorage<string>('currentUserToken');
     const users = getFromLocalStorage<User[]>('users');
 
-    users?.forEach(user => {
-        if (user.token === savedToken) {
-            return true;
-        }
-    });
+    if (!savedToken || !users) return false;
 
-    return false;
+    return users.some(user => user.token === savedToken);
 }
