@@ -6,6 +6,7 @@ import Books from './pages/Books'
 import Book from './pages/Book'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Cart from './pages/Cart'
 import { checkToken } from './services/localStorageHelper'
 
 createRoot(document.getElementById('root')!).render(
@@ -13,9 +14,10 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/books"  element={checkToken() ? <Books /> : <Login />} />
-        <Route path="/book" element={<Book />} />
+        <Route path="/book/:bookId" element={<Book />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
 )

@@ -103,3 +103,70 @@ export function checkToken(): boolean {
 
     return users.some(user => user.token === savedToken);
 }
+
+export function getCurrentUserToken(): string | null {
+  return getFromLocalStorage<string>('currentUserToken');
+}
+
+export function getCurrentUser(): User | null {
+  const token = getCurrentUserToken();
+  const users = getFromLocalStorage<User[]>('users') || [];
+  if (!token) return null;
+  return users.find(u => u.token === token) || null;
+}
+
+export function getCartForCurrentUser(): number[] {
+  const currentUser = getCurrentUser();
+  if (currentUser) {
+    if (!currentUser.cart) {
+      currentUser.cart = [];
+    }
+    return (currentUser.cart as number[]) || [];
+  }
+  return getFromLocalStorage<number[]>('guestCart') || [];
+}
+
+export function saveCartForCurrentUser(cart: number[]): void {
+  const token = getCurrentUserToken();
+  if (!token) {
+    saveToLocalStorage<number[]>('guestCart', cart);
+      try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+    return;
+  }
+
+  const users = getFromLocalStorage<User[]>('users') || [];
+  const idx = users.findIndex(u => u.token === token);
+  if (idx === -1) {
+    saveToLocalStorage<number[]>('guestCart', cart);
+      try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+    return;
+  }
+
+  if (!users[idx].cart) {
+    users[idx].cart = [];
+  }
+  users[idx].cart = cart;
+  saveToLocalStorage<User[]>('users', users);
+    try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+}
+
+export function addBookToCurrentUserCart(bookId: number): void {
+  const cart = getCartForCurrentUser();
+  cart.push(bookId);
+  saveCartForCurrentUser(cart);
+}
+
+export function removeBookFromCurrentUserCart(bookId: number): void {
+  const cart = getCartForCurrentUser();
+  const idx = cart.indexOf(bookId);
+  if (idx !== -1) {
+    cart.splice(idx, 1);
+    saveCartForCurrentUser(cart);
+      try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+  }
+}
+
+export function clearCartForCurrentUser(): void {
+  saveCartForCurrentUser([]);
+  try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+}

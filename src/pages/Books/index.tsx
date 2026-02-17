@@ -27,7 +27,7 @@ const Books = () => {
                 <Categories onCategoryChange={handleCategoryChange} />
                 <div className="books-container">
                     {filteredBooks && filteredBooks.map((book, index) => ( 
-                        < BookPreview image={book.image} title={book.title} authorName={book.authorName ?? "unknown author"}  status={book.status} price={book.price} discountPrice={book.discountPrice} key={index}/>) )
+                        < BookPreview id={book.id} image={book.image} title={book.title} authorName={book.authorName ?? "unknown author"}  status={book.status} price={book.price} discountPrice={book.discountPrice} key={index}/>) )
                     }
                 </div>
                 <AdBanner/>

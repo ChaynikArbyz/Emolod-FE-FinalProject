@@ -7,5 +7,6 @@ export type User = {
     state: string;
     token: string;
     createdAt: Date;
+    cart?: number[];
     comments: Comment[]
 }

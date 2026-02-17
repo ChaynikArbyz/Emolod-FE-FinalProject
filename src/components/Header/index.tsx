@@ -1,4 +1,5 @@
 import './style.css'
+import Cart from '../Cart';
 
 const Header = () => {
     return (
@@ -21,7 +22,7 @@ const Header = () => {
                 <input type="text" className="search-input"/>
                 
                 <a href="/account" className="nav-link">Account</a>
-                <button className="btn-cart"><img src="https://i.postimg.cc/g0nc57FD/Vector.png" alt="card image" /></button>
+                <Cart/>
             </div>
         </header>
         </>

@@ -93,21 +93,6 @@
     font-size: 0.9rem;
 }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    color: #333;
-}
-
-.remember-me input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    accent-color: #ff7b00;
-}
-
 .forgot-link {
     color: #ff7b00;
     text-decoration: none;

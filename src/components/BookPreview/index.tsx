@@ -1,6 +1,8 @@
+import { addBookToCurrentUserCart } from '../../services/localStorageHelper'
 import './style.css'
 
 type props = {
+    id: number
     image: string
     title: string
     authorName: string
@@ -13,7 +15,7 @@ const BookPreview = (args: props) => {
 
     return (
         <div className="book-container">
-            <a href="/book" className="book-image-link"><img className="book-image" src={args.image} alt="bookImage"></img></a>
+            <a href={`/book/${args.id}`} className="book-image-link"><img className="book-image" src={args.image} alt="bookImage"></img></a>
             <p className="book-title">{args.title}</p>
             <p className="book-author">{args.authorName}</p>
             <div className="book-prices">
@@ -21,7 +23,14 @@ const BookPreview = (args: props) => {
                 <p className="book-price">{args.price}$</p>
             </div>
             <p className="book-status">{args.status}</p>
-            <button className="book-btn-to-cart">Add to Cart</button>
+            <button className="book-btn-to-cart"
+            onClick={() => {
+                if (args.id) {
+                    addBookToCurrentUserCart(args.id);
+                    alert("Book added to cart!");
+                }
+            }}
+            >Add to Cart</button>
         </div>
         )
 }

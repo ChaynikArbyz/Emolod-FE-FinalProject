@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../services/localStorageHelper';
+import CheckboxItem from '../../components/CheckboxItem';
 import './style.css';
 
 export default function Login() {
@@ -65,11 +66,12 @@ export default function Login() {
                     </div>
 
                     <div className="login-options">
-                        <label className="remember-me">
-                            <input type="checkbox" />
-                            <span>Remember me</span>
-                        </label>
-                        <a href="#" className="forgot-link">Forgot password?</a>
+                        <CheckboxItem
+                            id="rememberMe"
+                            name="rememberMe"
+                            label="Remember me"
+                        />
+                        <a className="forgot-link">Forgot password?</a>
                     </div>
 
                     <button type="submit" className="login-button">
