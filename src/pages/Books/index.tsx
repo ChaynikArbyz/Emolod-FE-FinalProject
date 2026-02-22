@@ -4,10 +4,13 @@ import Layout from "../../layouts/Layout";
 import Categories from "../../components/Categories";
 import BookPreview from "../../components/BookPreview";
 import AdBanner from "../../components/AdBanner";
-import {getBooksWithAuthor} from "../../services/localStorageHelper"
-import type {BookWithAuthor} from "../../services/localStorageHelper"
-
+import { getBooksWithAuthor } from "../../services/localStorageHelper"
+import type { BookWithAuthor } from "../../services/localStorageHelper"
+    //для тесту корзини
+    //clearCartForCurrentUser()
 const Books = () => {
+    
+
     const allBooks: BookWithAuthor[] | null = getBooksWithAuthor()
     const [selectedCategories, setSelectedCategories] = useState<string[]>([])
     

@@ -1,7 +1,7 @@
 import type {Book} from "../types/Book.ts";
 import type {Category} from "../types/Category.ts";
 import type {Author} from "../types/Author.ts";
-import type {User} from "../types/User.ts";
+import type {CartItem, User} from "../types/User.ts";
 
 export type BookWithAuthor = Book & { authorName: string | null };
 
@@ -115,30 +115,28 @@ export function getCurrentUser(): User | null {
   return users.find(u => u.token === token) || null;
 }
 
-export function getCartForCurrentUser(): number[] {
+export function getCartForCurrentUser(): CartItem[] {
   const currentUser = getCurrentUser();
   if (currentUser) {
     if (!currentUser.cart) {
       currentUser.cart = [];
     }
-    return (currentUser.cart as number[]) || [];
+    return (currentUser.cart as CartItem[]) || [];
   }
-  return getFromLocalStorage<number[]>('guestCart') || [];
+  return getFromLocalStorage<CartItem[]>('guestCart') || [];
 }
 
-export function saveCartForCurrentUser(cart: number[]): void {
+export function saveCartForCurrentUser(cart: CartItem[]): void {
   const token = getCurrentUserToken();
   if (!token) {
-    saveToLocalStorage<number[]>('guestCart', cart);
-      try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+    saveToLocalStorage<CartItem[]>('guestCart', cart);
     return;
   }
 
   const users = getFromLocalStorage<User[]>('users') || [];
   const idx = users.findIndex(u => u.token === token);
   if (idx === -1) {
-    saveToLocalStorage<number[]>('guestCart', cart);
-      try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+    saveToLocalStorage<CartItem[]>('guestCart', cart);
     return;
   }
 
@@ -147,26 +145,24 @@ export function saveCartForCurrentUser(cart: number[]): void {
   }
   users[idx].cart = cart;
   saveToLocalStorage<User[]>('users', users);
-    try { window.dispatchEvent(new Event('cartChanged')); } catch {}
-}
-
-export function addBookToCurrentUserCart(bookId: number): void {
-  const cart = getCartForCurrentUser();
-  cart.push(bookId);
-  saveCartForCurrentUser(cart);
-}
-
-export function removeBookFromCurrentUserCart(bookId: number): void {
-  const cart = getCartForCurrentUser();
-  const idx = cart.indexOf(bookId);
-  if (idx !== -1) {
-    cart.splice(idx, 1);
-    saveCartForCurrentUser(cart);
-      try { window.dispatchEvent(new Event('cartChanged')); } catch {}
-  }
 }
 
 export function clearCartForCurrentUser(): void {
   saveCartForCurrentUser([]);
-  try { window.dispatchEvent(new Event('cartChanged')); } catch {}
+}
+
+export function saveTotalCountForCurrentUser(totalCount: number): void {
+  const token = getCurrentUserToken();
+  if (!token) {
+    return;
+  }
+
+  const users = getFromLocalStorage<User[]>('users') || [];
+  const idx = users.findIndex(u => u.token === token);
+  if (idx === -1) {
+    return;
+  }
+
+  users[idx].totalCount = totalCount;
+  saveToLocalStorage<User[]>('users', users);
 }

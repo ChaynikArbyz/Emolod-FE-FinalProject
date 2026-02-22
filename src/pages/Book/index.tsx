@@ -4,10 +4,13 @@ import AdBanner from "../../components/AdBanner";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import type { BookWithAuthor } from "../../services/localStorageHelper";
-import { getBooksWithAuthor, getCategories, addBookToCurrentUserCart } from "../../services/localStorageHelper";
+import { getBooksWithAuthor, getCategories } from "../../services/localStorageHelper";
 import BookPreview from "../../components/BookPreview";
+import { addBookToCart } from "../../shop/slices/userSlice";
+import { useAppDispatch } from "../../hooks/redux";
 
 const Book = () => {
+    const dispatch = useAppDispatch();
     const bookId = useParams().bookId;
     const [book, setBook] = useState<BookWithAuthor | null>(null);
     const [recommendedBooks, setRecommendedBooks] = useState<BookWithAuthor[]>([]);
@@ -72,7 +75,7 @@ const Book = () => {
                             style={{maxWidth:"230px", marginLeft:"0px"}}
                             onClick={() => {
                                 if (book) {
-                                    addBookToCurrentUserCart(book.id);
+                                    dispatch(addBookToCart(book.id));
                                     alert("Book added to cart!");
                                 }
                             }}

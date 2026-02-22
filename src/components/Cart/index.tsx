@@ -3,8 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { useEffect, useState } from 'react';
-import { getCartForCurrentUser } from '../../services/localStorageHelper';
+import { useAppSelector } from "../../hooks/redux";
 
 
 
@@ -20,22 +19,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 const Cart = () => {
-    const [items, setItems] = useState<number[]>(() => {return getCartForCurrentUser() ?? []});
-
-    useEffect(() => {
-      const update = () => {
-        const cart = getCartForCurrentUser() || [];
-        setItems(cart);
-      }
-
-      update();
-
-      window.addEventListener('cartChanged', update);
-
-      return () => {
-        window.removeEventListener('cartChanged', update);
-      }
-    }, []);
+    const totalCount = useAppSelector(state => state.user.totalCount);
 
     return (
         <IconButton aria-label="cart" href="/cart"
@@ -45,7 +29,7 @@ const Cart = () => {
             },
           }}
         >
-          <StyledBadge badgeContent={items.length} color="primary">
+          <StyledBadge badgeContent={totalCount} color="primary">
             <ShoppingCartIcon />
           </StyledBadge>
         </IconButton>

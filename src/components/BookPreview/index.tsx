@@ -1,5 +1,6 @@
-import { addBookToCurrentUserCart } from '../../services/localStorageHelper'
 import './style.css'
+import { addBookToCart } from '../../shop/slices/userSlice';
+import { useAppDispatch } from '../../hooks/redux';
 
 type props = {
     id: number
@@ -12,6 +13,7 @@ type props = {
 }
 
 const BookPreview = (args: props) => {
+    const dispatch = useAppDispatch();
 
     return (
         <div className="book-container">
@@ -26,7 +28,7 @@ const BookPreview = (args: props) => {
             <button className="book-btn-to-cart"
             onClick={() => {
                 if (args.id) {
-                    addBookToCurrentUserCart(args.id);
+                    dispatch(addBookToCart(args.id));
                     alert("Book added to cart!");
                 }
             }}

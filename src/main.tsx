@@ -8,8 +8,11 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Cart from './pages/Cart'
 import { checkToken } from './services/localStorageHelper'
+import { Provider } from 'react-redux'
+import { store } from './shop'
 
 createRoot(document.getElementById('root')!).render(
+  <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
@@ -20,4 +23,5 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
+  </Provider>
 )
