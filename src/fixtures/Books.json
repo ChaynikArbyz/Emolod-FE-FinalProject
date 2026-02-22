@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/1984_first_edition_cover.jpg",
       "categoryId": 1,
       "title": "1984",
       "authorId": 1,
@@ -16,7 +16,7 @@
     },
     {
       "id": 2,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/ru/d/d2/%D0%9E%D0%B1%D0%BB%D0%BE%D0%B6%D0%BA%D0%B0_%D0%BF%D0%B5%D1%80%D0%B2%D0%BE%D0%B3%D0%BE_%D0%B8%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F_%D1%80%D0%BE%D0%BC%D0%B0%D0%BD%D0%B0_%D0%93%D0%B0%D1%80%D1%80%D0%B8_%D0%9F%D0%BE%D1%82%D1%82%D0%B5%D1%80_%D0%B8_%D1%84%D0%B8%D0%BB%D0%BE%D1%81%D0%BE%D1%84%D1%81%D0%BA%D0%B8%D0%B9_%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C.jpg",
       "categoryId": 2,
       "title": "Harry Potter 1",
       "authorId": 2,
@@ -31,7 +31,7 @@
     },
     {
       "id": 3,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/ru/3/3a/Harry_Potter_and_the_Chamber_of_Secrets_%E2%80%94_book.jpg",
       "categoryId": 2,
       "title": "Harry Potter 2",
       "authorId": 2,
@@ -46,7 +46,7 @@
     },
     {
       "id": 4,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/ru/6/6a/%D0%93%D0%B0%D1%80%D1%80%D0%B8_%D0%9F%D0%BE%D1%82%D1%82%D0%B5%D1%80_3.jpg",
       "categoryId": 2,
       "title": "Harry Potter 3",
       "authorId": 2,
@@ -61,7 +61,7 @@
     },
     {
       "id": 5,
-      "image": "https://placehold.co/220x300",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhQKaLgf-QuO9eJEzJqh6hc4v00Y2dsLHSVPf12QFUJpG8uQiRGyPJk-APp222BYPdtSzN8XhKmdu9RbNAn1v8KCptOo4XfpAPiKUBBWRtFg0eTDtM0zgQzjD-r2tKhxXnCx7J2gorgLnk/s1600/images+(53).jpg",
       "categoryId": 3,
       "title": "The Hobbit",
       "authorId": 3,
@@ -76,7 +76,7 @@
     },
     {
       "id": 6,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/9/7/9780007203543_0.jpg",
       "categoryId": 2,
       "title": "LOTR Fellowship",
       "authorId": 3,
@@ -91,7 +91,7 @@
     },
     {
       "id": 7,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/7/1/71pawddhqbl._sl1122_.jpg",
       "categoryId": 2,
       "title": "LOTR Two Towers",
       "authorId": 3,
@@ -106,7 +106,7 @@
     },
     {
       "id": 8,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/7/1/71rfjcj5a8l.jpg",
       "categoryId": 2,
       "title": "LOTR Return King",
       "authorId": 3,
@@ -121,7 +121,7 @@
     },
     {
       "id": 9,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/09/The_Shining_%281977%29_front_cover%2C_first_edition.jpg",
       "categoryId": 5,
       "title": "The Shining",
       "authorId": 4,
@@ -136,7 +136,7 @@
     },
     {
       "id": 10,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/9/7/9781444707861_0.jpg",
       "categoryId": 5,
       "title": "IT",
       "authorId": 4,
@@ -151,7 +151,7 @@
     },
     {
       "id": 11,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Carrie_%281974%29_front_cover%2C_first_edition.jpg",
       "categoryId": 5,
       "title": "Carrie",
       "authorId": 4,
@@ -166,7 +166,7 @@
     },
     {
       "id": 12,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/14/Misery_%281987%29_front_cover%2C_first_edition.jpg",
       "categoryId": 5,
       "title": "Misery",
       "authorId": 4,
@@ -181,7 +181,7 @@
     },
     {
       "id": 13,
-      "image": "https://placehold.co/220x300",
+      "image": "https://www.britishbook.ua/upload/resize_cache/iblock/e75/t7adcxi08p771azn6yjhhc9uwodqa3yv/1900_800_174b5ed2089e1946312e2a80dcd26f146/knyga_murder_on_the_orient_express_the_graphic_novel.jpg",
       "categoryId": 4,
       "title": "Murder Orient Express",
       "authorId": 5,
@@ -196,7 +196,7 @@
     },
     {
       "id": 14,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/catalog/product/4/1/41hgd0j6epl_waifu2x_art_noise2_scale_tta_1.png",
       "categoryId": 4,
       "title": "Death Nile",
       "authorId": 5,
@@ -211,7 +211,7 @@
     },
     {
       "id": 15,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/9/7/9780008328924_0.jpg",
       "categoryId": 4,
       "title": "And Then None",
       "authorId": 5,
@@ -226,7 +226,7 @@
     },
     {
       "id": 16,
-      "image": "https://placehold.co/220x300",
+      "image": "https://i.pinimg.com/736x/c9/5d/ac/c95dacf48a41d6fb10a0757e7822c909.jpg",
       "categoryId": 6,
       "title": "Long Walk Freedom",
       "authorId": 1,
@@ -241,7 +241,7 @@
     },
     {
       "id": 17,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/9/7/9780199688777_0.jpg",
       "categoryId": 7,
       "title": "World War II",
       "authorId": 3,
@@ -256,7 +256,7 @@
     },
     {
       "id": 18,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/catalog/product/9/7/9780241569566_0.jpg",
       "categoryId": 7,
       "title": "Ancient Rome",
       "authorId": 5,
@@ -271,7 +271,7 @@
     },
     {
       "id": 19,
-      "image": "https://placehold.co/220x300",
+      "image": "https://static.yakaboo.ua/media/catalog/product/9/1/9123y5em2tl.jpg",
       "categoryId": 1,
       "title": "Animal Farm",
       "authorId": 1,
@@ -286,7 +286,7 @@
     },
     {
       "id": 20,
-      "image": "https://placehold.co/220x300",
+      "image": "https://upload.wikimedia.org/wikipedia/ru/7/78/Foundation_cover.jpg",
       "categoryId": 3,
       "title": "Foundation",
       "authorId": 2,

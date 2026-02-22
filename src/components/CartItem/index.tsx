@@ -15,7 +15,7 @@ const CartItem = (args: props) => {
     return (
         <div className="cart-book-container">
             <div className="cart-book-meta">
-                <img className="cart-book-image" src={args.book.image} alt="bookImage"></img>
+                <img className="book-image" src={args.book.image} alt="bookImage"></img>
                 <div className="cart-book-info">
                     <p className="book-page-title">{args.book.title}</p>
                     <p className="cart-book-description">{args.book.description}</p>

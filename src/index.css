@@ -64,3 +64,11 @@ input:focus {
     background-color: #f9f9f9;
   }
 }
+
+img.book-image {
+  max-width: 220px;
+  max-height: 300px;
+  width: 220px;
+  height: 300px;
+  object-fit: fill;
+}
