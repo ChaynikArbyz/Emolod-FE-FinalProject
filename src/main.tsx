@@ -17,10 +17,10 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/books"  element={checkToken() ? <Books /> : <Login />} />
-        <Route path="/book/:bookId" element={<Book />} />
+        <Route path="/book/:bookId" element={checkToken() ? <Book /> : <Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/cart" element={checkToken() ? <Cart /> : <Login />} />
       </Routes>
     </BrowserRouter>
   </Provider>
