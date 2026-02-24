@@ -26,7 +26,7 @@ const CartItem = (args: props) => {
                 </div>
             </div>
             <div className="cart-book-important-info">
-                <p className="cart-book-total-price" style={{fontWeight:"700"}}>Total price: {Math.round(args.book.discountPrice * args.quantity * 100) / 100}$</p>
+                <p className="cart-book-total-price" style={{fontWeight:"700"}}>Total price: {(args.book.discountPrice * args.quantity).toFixed(2)}$</p>
                 <div className="cart-book-quantity-container">
                     <button className="cart-book-btn" onClick={() => dispatch(removeOneBookFromCart(args.book.id))}>-</button>
                     <p className="cart-book-quantity">Quantity: {args.quantity}</p>

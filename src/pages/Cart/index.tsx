@@ -13,7 +13,7 @@ const Cart = () => {
                     <p className="cart-total-price" style={{fontWeight:"700", fontSize:"30px", margin:"0", marginLeft:"20px"}}>Total Cart Price: {cart?.reduce((total, item) => {
                         const book = getBooksWithAuthor()?.find(b => b.id === item.bookId);
                         return total + (book ? book.discountPrice * item.quantity : 0);
-                    }, 0) || 0}$</p>
+                    }, 0).toFixed(2) || 0}$</p>
                     <button className="cart-checkout-btn">Checkout</button>
                 </div>
                 {cart?.map(item => {
