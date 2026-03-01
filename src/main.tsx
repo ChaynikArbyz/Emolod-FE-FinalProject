@@ -10,6 +10,7 @@ import Cart from './pages/Cart'
 import { checkToken } from './services/localStorageHelper'
 import { Provider } from 'react-redux'
 import { store } from './shop'
+import Products from './pages/Products'
 
 createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={checkToken() ? <Cart /> : <Login />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
     </BrowserRouter>
   </Provider>

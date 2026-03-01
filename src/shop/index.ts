@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from './slices/userSlice';
+import products from './slices/productsSlice';
 import { saveCartForCurrentUser, saveTotalCountForCurrentUser } from '../services/localStorageHelper';
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
+    products: products
   },
 });
 

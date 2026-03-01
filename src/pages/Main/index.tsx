@@ -6,7 +6,6 @@ import BookPreview from "../../components/BookPreview"
 const Main = () => {
     const allBooks = getBooksWithAuthor()
     const popularBooks = allBooks ? allBooks.slice(0, 10) : []
-
     return (
         <Layout>
             <div className="main-first-background">

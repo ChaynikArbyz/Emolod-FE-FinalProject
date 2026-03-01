@@ -16,6 +16,7 @@ const NotLoginedHeader = () => {
                     <a href="/about" className="not-nav-link">About us</a>
                     <a href="/books" className="not-nav-link">Books</a>
                     <a href="/contact" className="not-nav-link">Contact us</a>
+                    <a href="/products" className="not-nav-link">Sandbox</a>
                 </nav>
 
                 <div className="not-auth-buttons">
@@ -25,7 +26,6 @@ const NotLoginedHeader = () => {
             </div>
         </header>
         </>
-    );
-};
+    );};
 
 export default NotLoginedHeader;
